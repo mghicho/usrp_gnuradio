@@ -29,7 +29,7 @@ which indicates that the installation have copied xml files in `/usr/local/share
 
 
 #uhd commands: 
-there are some simple commands that one can use after installing GNURadio, specially if you want a simple spectrum analyzer or want to Record I/Q sample stream to a file and use in another software like MATLAB. they are listed below. they all include a "-h" switch which will display a help screen.
+there are some simple commands that one can use after installing GNURadio, specially if you want a simple spectrum analyzer or want to Record I/Q sample stream to a file and use in another software like MATLAB. they are listed below. they all include a "-h" switch which will display a help screen. more info [here](https://gnuradio.org/redmine/projects/gnuradio/wiki/HowToUse)
 ```
 uhd_cal_rx_iq_balance
 uhd_find_devices
