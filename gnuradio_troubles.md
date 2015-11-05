@@ -26,3 +26,20 @@ it's something like this:
 -- Installing: /usr/local/share/gnuradio/grc/blocks/mac_burst_tagger.xml
 ```
 which indicates that the installation have copied xml files in `/usr/local/share/gnuradio/grc/blocks`
+
+
+#uhd commands: 
+there are some simple commands that one can use after installing GNURadio, specially if you want a simple spectrum analyzer or want to Record I/Q sample stream to a file and use in another software like MATLAB. they are listed below. they all include a "-h" switch which will display a help screen.
+```
+uhd_cal_rx_iq_balance
+uhd_find_devices
+uhd_siggen
+uhd_cal_tx_dc_offset
+uhd_image_loader
+uhd_siggen_gui
+uhd_cal_tx_iq_balance
+uhd_rx_cfile
+uhd_usrp_probe
+uhd_fft     
+uhd_rx_nogui           
+```
