@@ -43,3 +43,17 @@ uhd_usrp_probe
 uhd_fft     
 uhd_rx_nogui           
 ```
+
+# Adding new modules to gnuradio in mac os :
+If you've installed your gnuradio with mac port, first you need to make sure that the mac port python is in use. then when you wanna compile the module use this:
+
+```
+cmake -DPYTHON_LIBRARY=/opt/local/lib/libpython2.7.dylib -DCMAKE_INSTALL_PREFIX=/opt/local/ ../
+```
+
+after compiling the code( make and sudo make install) put these two lines in .bash_profile :
+
+```
+export PYTHONPATH=/opt/local/lib/python2.7/site-packages:$PYTHONPATH
+export GRC_BLOCKS_PATH=/usr/local/share/gnuradio/grc/blocks
+```
