@@ -57,3 +57,5 @@ after compiling the code( make and sudo make install) put these two lines in .ba
 export PYTHONPATH=/opt/local/lib/python2.7/site-packages:$PYTHONPATH
 export GRC_BLOCKS_PATH=/usr/local/share/gnuradio/grc/blocks
 ```
+##### While installing gr-cdma:
+if you're getting a linking error related to lib4cpp, search the build directory for "link.txt" and add `-llib4cpp` at the end of all of those files.
