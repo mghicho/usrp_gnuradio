@@ -62,4 +62,13 @@ if you're getting a linking error related to lib4cpp, search the build directory
 
 #Multiple inputs:
 put the `MAX_INT` parameter as -1. 
-the `input_items` input of the work function is vector of void stars. these void starts can be casted to the desired type of input, e.ge to `gr_complex*` in case of complex input. Obviously the number of input ports can be obtained from size of the vector. 
+the `input_items` input of the work function is vector of void stars. these void stars can be casted to the desired type of input, e.g. to `gr_complex*` in case of complex input. Obviously the number of input ports can be obtained from size of the vector. Example:
+```
+int number_of_inputs=input_items.size();
+for(int i=0;i<number_of_inputs;i++)
+{
+ int this loop, (const gr_complex *) input_items[i] is the array for i_th input.
+ const gr_complex *in_i = (const gr_complex *) input_items[0];
+ now we can iterate in in_i for items of i_th input.
+}
+```
