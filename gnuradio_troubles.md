@@ -59,3 +59,7 @@ export GRC_BLOCKS_PATH=/usr/local/share/gnuradio/grc/blocks
 ```
 ##### While installing gr-cdma:
 if you're getting a linking error related to lib4cpp, search the build directory for "link.txt" and add `-llib4cpp` at the end of all of those files.
+
+#Multiple inputs:
+put the `MAX_INT` parameter as -1. 
+the `input_items` input of the work function is vector of void stars. these void starts can be casted to the desired type of input, e.ge to `gr_complex*` in case of complex input. Obviously the number of input ports can be obtained from size of the vector. 
