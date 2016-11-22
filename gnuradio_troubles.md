@@ -72,3 +72,6 @@ for(int i=0;i<number_of_inputs;i++)
  now we can iterate in in_i for items of i_th input.
 }
 ```
+
+# Working with tagged_stream_blocks:
+The definition for the `work` function of tagged_stream_blocks looks like the one for `general_work` of other blocks. but the difference here is that the input `noutput_items` is "not" number of output items to write on each output stream. In this case, this variable shows The size of the writable output buffer which can be a lot larger than the pdu size. this essentially makes this variable unusable. Instead use `ninput_items[i]` where `i` is the index of input to find the pdu length.
