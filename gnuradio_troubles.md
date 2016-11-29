@@ -57,6 +57,18 @@ after compiling the code( make and sudo make install) put these two lines in .ba
 export PYTHONPATH=/opt/local/lib/python2.7/site-packages:$PYTHONPATH
 export GRC_BLOCKS_PATH=/usr/local/share/gnuradio/grc/blocks
 ```
+### Adding a library for linking:
+If an outside library has been used for a block. That library might be needed in linking phase of making. the standard place for libraries is `/usr/local/lib` , if the library is already build and installed its file must be there. If the use has the .a or .so or .dylib file they may put a copy of it in that folder so the gcc can easily find it with the flag `-l<name of library>`. for example if the name of library is levmar, the filename is liblevmar.a and the flag would -llevmar. 
+in order to add the linking flag to all the codes, the function `target_link_libraries` in the file `CMakeLists.txt` found in the `lib` folder of the module has to be modified in the following order. For example in order to add the `levmar` library the line:
+```
+target_link_libraries(gnuradio-pnc ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+```
+will change to :
+```
+target_link_libraries(gnuradio-pnc ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES} levmar)
+```
+The same thing happens to all other used of function `target_link_libraries` in that file. run the cmake command and make again after modifing this file.
+
 ##### While installing gr-cdma:
 if you're getting a linking error related to lib4cpp, search the build directory for "link.txt" and add `-llib4cpp` at the end of all of those files.
 
