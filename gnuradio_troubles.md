@@ -87,3 +87,18 @@ for(int i=0;i<number_of_inputs;i++)
 
 # Working with tagged_stream_blocks:
 The definition for the `work` function of tagged_stream_blocks looks like the one for `general_work` of other blocks. but the difference here is that the input `noutput_items` is "not" number of output items to write on each output stream. In this case, this variable shows The size of the writable output buffer which can be a lot larger than the pdu size. this essentially makes this variable unusable. Instead use `ninput_items[i]` where `i` is the index of input to find the pdu length.
+
+
+# OOT modules in Ubuntu,
+If after compilling and installing a new block in ubuntu, when everything is fine, you stil get this error:
+```
+AttributeError : 'module' object has no attribute 'block name'
+```
+in order to fix it, first check the enviroment variable `PYTHONPATH` and make sure it point to where the python blocks are, if it didn't solve the problem, then it might be because SWIG is not install. if that's the case, you must've got this error after cmakeing:
+```
+disabling swig because version check failed
+```
+in order to solve it, simply install swig on your ubuntu machine by running the below code:
+```
+sudo apt-get install swig
+```
