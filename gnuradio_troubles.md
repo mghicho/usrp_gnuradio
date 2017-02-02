@@ -104,6 +104,6 @@ sudo apt-get install swig
 ```
 
 # Positioning and Tabs with QT:
-In order to have tabs when using QT, insert the block, QT GUI Tab Widget and put the number of tabs and a label for each tab.
-inorder to put each QT component in the desired tab use the phrase `tab@T:x,y` in their GUI hint, where `T` is the tab index, and `x,y` in the position you want the component to be in.
+In order to have tabs when using QT, insert the block, `QT GUI Tab Widget` and put the number of tabs and a label for each tab.
+In order to put each QT component in the desired tab use the phrase `tab@T:x,y` in their GUI hint, where `T` is the tab index, and `x,y` in the position you want the component to be in.
 
