@@ -107,3 +107,4 @@ sudo apt-get install swig
 In order to have tabs when using QT, insert the block, `QT GUI Tab Widget` and put the number of tabs and a label for each tab.
 In order to put each QT component in the desired tab use the phrase `tab@T:x,y` in their GUI hint, where `T` is the tab index, and `x,y` in the position you want the component to be in.
 
+# setting internal USRP time to zero in GRC
